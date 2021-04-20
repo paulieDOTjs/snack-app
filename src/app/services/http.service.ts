@@ -6,7 +6,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class HttpService {
   private BASE_URL = 'https://snack-server-nerdery.herokuapp.com';
-
   private endPoints = {
     getHello: '/',
     getAllSnacks: '/snacks',

@@ -1,1 +1,9 @@
-<p>current works!</p>
+<h1>Currently In Stock</h1>
+
+<p>Here are the snacks currently available in the Nerdery kitchen now</p>
+
+<section *ngIf="snacks.length > 0">
+  <div *ngFor="let snack of snacks">
+    <app-snack-card [snack]="snack"></app-snack-card>
+  </div>
+</section>

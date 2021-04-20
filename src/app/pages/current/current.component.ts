@@ -7,11 +7,14 @@ import { HttpService } from '../../services/http.service';
   styleUrls: ['./current.component.scss'],
 })
 export class CurrentComponent implements OnInit {
+  public snacks = [];
+
   constructor(private http: HttpService) {}
 
   ngOnInit(): void {
-    this.http.getSnacks().subscribe((snacks) => {
-      console.log(snacks);
+    this.http.getSnacks().subscribe((data: any[]) => {
+      this.snacks = data.sort((a, b) => b.votes - a.votes);
+      console.log(this.snacks);
     });
   }
 }
