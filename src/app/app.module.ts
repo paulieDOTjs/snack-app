@@ -12,13 +12,12 @@ import { VotingComponent } from './pages/voting/voting.component';
 
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { SnackCardComponent } from './components/snack-card/snack-card.component';
-import { SnackTableComponent } from './components/snack-table/snack-table.component';
-import { RowComponent } from './components/snack-table/row/row.component';
 import { SnackSelectionComponent } from './components/snack-selection/snack-selection.component';
-import { ItemComponent } from './components/snack-selection/item/item.component';
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { InputComponent } from './components/signup-form/input/input.component';
+import { SnackRowComponent } from './components/snack-row/snack-row.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
   declarations: [
@@ -29,13 +28,12 @@ import { InputComponent } from './components/signup-form/input/input.component';
     SignupComponent,
     VotingComponent,
     SnackCardComponent,
-    SnackTableComponent,
-    RowComponent,
     SnackSelectionComponent,
-    ItemComponent,
     SignupFormComponent,
     LogoComponent,
     InputComponent,
+    SnackRowComponent,
+    ErrorMessageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

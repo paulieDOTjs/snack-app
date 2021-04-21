@@ -1,39 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+
+import { endpoint } from 'src/app/config/endpoint';
+import { snack } from 'src/app/models/snack';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HttpService {
-  private BASE_URL = 'https://snack-server-nerdery.herokuapp.com';
-  private endPoints = {
-    getHello: '/',
-    getAllSnacks: '/snacks',
-    postUpdateSnackByID: '/snacks/vote/',
-  };
-
-  private headers = new HttpHeaders({
-    'Content-Type': 'application/json',
-    Authorization: `Bearer 33b55673-57c7-413f-83ed-5b4ae8d18827`,
-  });
-
   constructor(private httpClient: HttpClient) {}
 
   sayHello() {
-    return this.httpClient.get(this.BASE_URL + this.endPoints.getHello);
+    return this.httpClient.get<{ message: string } | Error>(
+      endpoint.base_url + endpoint.getHello
+    );
   }
 
   getSnacks() {
-    return this.httpClient.get(this.BASE_URL + this.endPoints.getAllSnacks, {
-      headers: this.headers,
-    });
+    return this.httpClient.get<snack[]>(
+      endpoint.base_url + endpoint.getAllSnacks,
+      {
+        headers: endpoint.headers,
+      }
+    );
   }
 
-  updateSnack(id: number) {
-    return this.httpClient.get(
-      this.BASE_URL + this.endPoints.postUpdateSnackByID + id,
+  updateSnack(id: string) {
+    return this.httpClient.post<snack>(
+      endpoint.base_url + endpoint.postUpdateSnackByID + id,
+      { id },
       {
-        headers: this.headers,
+        headers: endpoint.headers,
       }
     );
   }

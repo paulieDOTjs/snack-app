@@ -1,7 +1,7 @@
 export type snack = {
   brand: string;
   description: string;
-  id: number;
+  id: string;
   image: string;
   product: string;
   votes: number;

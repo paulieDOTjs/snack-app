@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from '../pages/home/home.component';
-import { CurrentComponent } from '../pages/current/current.component';
-import { VotingComponent } from '../pages/voting/voting.component';
-import { SignupComponent } from '../pages/signup/signup.component';
+import { HomeComponent } from 'src/app/pages/home/home.component';
+import { CurrentComponent } from 'src/app/pages/current/current.component';
+import { VotingComponent } from 'src/app/pages/voting/voting.component';
+import { SignupComponent } from 'src/app/pages/signup/signup.component';
 
 const routes: Routes = [
   { path: 'current', component: CurrentComponent },

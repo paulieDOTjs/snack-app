@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { snack } from '../../models/snack';
+import { snack } from 'src/app/models/snack';
 
 @Component({
   selector: 'app-snack-card',
