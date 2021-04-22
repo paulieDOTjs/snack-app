@@ -48,7 +48,7 @@ export class VotingComponent implements OnInit {
     );
   }
 
-  receiveVote(id: string) {
+  castVote(id: string) {
     if (this.remaining === 0) {
       this.errors.push(ERROR_MESSAGES.OUT_OF_VOTES);
     }

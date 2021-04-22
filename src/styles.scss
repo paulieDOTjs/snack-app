@@ -144,7 +144,6 @@ details,
 figcaption,
 figure,
 footer,
-header,
 hgroup,
 menu,
 nav,
@@ -725,31 +724,6 @@ body {
 }
 
 /* ---------------------------------------------------------------------
- masthead
------------------------------------------------------------------------- */
-.masthead {
-  display: block;
-  padding-top: 45px;
-  text-align: center;
-}
-
-.masthead > * {
-  margin-bottom: 24px;
-}
-
-@media (min-width: 801px) {
-  .masthead {
-    display: grid;
-    grid-template-rows: 100vh 100vh 100vh 100vh;
-    justify-content: space-between;
-    align-items: center;
-    div {
-      max-width: 100%;
-    }
-  }
-}
-
-/* ---------------------------------------------------------------------
  navLink
 ------------------------------------------------------------------------ */
 .navLink {
@@ -796,4 +770,44 @@ body {
 
 .site-ft {
   border-top: 1px solid #acacac;
+}
+
+@media (min-width: 801px) {
+  #home {
+    border: white solid 12px;
+    background-image: url("./assets/media/images/banner.jpg");
+    height: 910px;
+    background-size: cover;
+  }
+  .u-constrainer {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 126px 1fr;
+    padding-top: 45px;
+    text-align: center;
+    height: 100%;
+  }
+  .home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #current {
+    height: 910px;
+    background-image: url("./assets/media/images/geo.jpg");
+    background-size: cover;
+  }
+  app-current {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    padding-top: 45px;
+  }
+
+  app-voting {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    padding-top: 45px;
+  }
 }

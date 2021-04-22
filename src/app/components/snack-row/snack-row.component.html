@@ -1,8 +1,0 @@
-<td>
-  <button (click)="castVote()">
-    <span *ngIf="votesCast.includes(snack.id)">✅</span>
-    <span *ngIf="!votesCast.includes(snack.id)">+</span>
-  </button>
-</td>
-<td>{{ snack.brand }} {{ snack.product }}</td>
-<td>{{ snack.votes }}</td>

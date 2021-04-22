@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { AppRoutingModule } from './utils/app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HomeComponent } from './pages/home/home.component';
@@ -16,7 +15,6 @@ import { SnackSelectionComponent } from './components/snack-selection/snack-sele
 import { SignupFormComponent } from './components/signup-form/signup-form.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { InputComponent } from './components/signup-form/input/input.component';
-import { SnackRowComponent } from './components/snack-row/snack-row.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -33,11 +31,10 @@ import { FooterComponent } from './components/footer/footer.component';
     SignupFormComponent,
     LogoComponent,
     InputComponent,
-    SnackRowComponent,
     ErrorMessageComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

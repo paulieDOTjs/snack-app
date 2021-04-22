@@ -68,34 +68,24 @@
     />
   </svg>
 </div>
-<div class="site">
-  <div class="masthead u-constrainer">
-    <div class="home">
-      <header>
-        <a class="logo">
-          <svg viewBox="0 0 900 300">
-            <use xlink:href="#logo"></use>
-          </svg>
-        </a>
-        <nav>
-          <a class="navLink" routerLink="/">Home</a>
-          <a class="navLink" routerLink="/current">Current</a>
-          <a class="navLink" routerLink="/voting">Voting</a>
-          <a class="navLink" routerLink="/signup">Signup</a>
-        </nav>
-      </header>
+
+<div id="home">
+  <div class="u-constrainer">
+    <app-nav-bar></app-nav-bar>
+    <div class="home-wrapper">
       <app-home></app-home>
     </div>
-    <div>
-      <app-current></app-current>
-    </div>
-    <div>
-      <app-voting></app-voting>
-    </div>
-    <div>
-      <app-signup></app-signup>
-    </div>
-    <!-- <router-outlet></router-outlet> -->
   </div>
-  <app-footer></app-footer>
 </div>
+<div id="current">
+  <div class="constrainer">
+    <app-current></app-current>
+  </div>
+</div>
+<div id="voting">
+  <div class="constrainer">
+    <app-voting></app-voting>
+  </div>
+</div>
+
+<app-footer></app-footer>

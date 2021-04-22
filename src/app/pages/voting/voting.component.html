@@ -1,40 +1,53 @@
-<h1>Snack Voting</h1>
-<h2>Vote on the snacks you want to see in this month's rotation</h2>
+<h2 class="hdg hdg_2">Snack Voting</h2>
+<h3>Vote on the snacks you want to see in this month's rotation</h3>
 <hr />
-<h3>{{ remaining }} Votes Remaining</h3>
+<h4>{{ remaining }} Votes Remaining</h4>
 
-<section *ngIf="!loading; else loadingText">
-  <div *ngIf="snacks.length > 0">
+<div *ngIf="!loading; else loadingText">
+  <section *ngIf="snacks.length > 0">
     <table>
-      <tr>
-        <th>
-          <h3>Available Items</h3>
-        </th>
-        <th>
-          <div>{{ snacks.length }}</div>
-        </th>
-      </tr>
-      <tr *ngFor="let snack of snacks">
-        <app-snack-row
-          [votesCast]="votesCast"
-          [snack]="snack"
-          [remaining]="remaining"
-          (voteEvent)="receiveVote($event)"
-        ></app-snack-row>
-      </tr>
+      <caption>
+        <h2>Available Items</h2>
+        <div>{{ snacks.length }}</div>
+      </caption>
+      <tbody>
+        <tr *ngFor="let snack of snacks">
+          <td>
+            <button (click)="castVote(snack.id)">
+              <span
+                *ngIf="votesCast.includes(snack.id)"
+                class="material-icons material-icons-outlined"
+              >
+                done
+              </span>
+
+              <span
+                *ngIf="!votesCast.includes(snack.id)"
+                class="material-icons material-icons-outlined"
+              >
+                add
+              </span>
+            </button>
+          </td>
+          <td>{{ snack.brand }} {{ snack.product }}</td>
+          <td>{{ snack.votes }}</td>
+        </tr>
+      </tbody>
     </table>
 
-    <h2>Selection</h2>
-    <span>{{ votesCast.length }}</span>
-    <hr />
-    <ul *ngFor="let snackVote of votesCast">
-      <app-snack-selection
-        [snackVote]="snackVote"
-        [snacks]="snacks"
-      ></app-snack-selection>
-    </ul>
-  </div>
-</section>
+    <div class="selection-wrapper">
+      <h2>Selection</h2>
+      <span>{{ votesCast.length }}</span>
+      <hr />
+      <ul *ngFor="let snackVote of votesCast">
+        <app-snack-selection
+          [snackVote]="snackVote"
+          [snacks]="snacks"
+        ></app-snack-selection>
+      </ul>
+    </div>
+  </section>
+</div>
 <ng-template #loadingText> Loading... </ng-template>
 <div *ngFor="let error of errors">
   <app-error-message [error]="error"></app-error-message>

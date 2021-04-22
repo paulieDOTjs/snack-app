@@ -1,0 +1,40 @@
+.image-wrapper {
+  margin-top: 20px;
+  height: 200px;
+  background-color: white;
+  padding: 8px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 4px #363535;
+  img {
+    max-width: 75%;
+    max-height: 75%;
+  }
+  div {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+  .text {
+    height: 32px;
+    color: white;
+    font-size: 12px;
+    padding: 4px;
+    z-index: 2;
+  }
+  .triangle {
+    border-left: 32px solid transparent;
+    border-top: 32px solid #0baebd;
+    z-index: 1;
+  }
+}
+
+h4 {
+  margin: 8px 0;
+}
+h4,
+h5 {
+  color: white;
+}

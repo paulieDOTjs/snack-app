@@ -1,5 +1,6 @@
 export const endpoint = {
-  base_url: 'https://snack-server-nerdery.herokuapp.com',
+  base_url:
+    'http://0.0.0.0:3000' || 'https://snack-server-nerdery.herokuapp.com',
   getHello: '/',
   getAllSnacks: '/snacks',
   postUpdateSnackByID: '/snacks/vote/',
