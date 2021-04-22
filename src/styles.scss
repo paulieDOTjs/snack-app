@@ -443,34 +443,6 @@ body {
 }
 
 /* ---------------------------------------------------------------------
- Footer
------------------------------------------------------------------------- */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  flex-direction: column;
-}
-
-@media (min-width: 801px) {
-  .footer {
-    flex-direction: row;
-  }
-}
-
-.footer-secondary {
-  text-align: center;
-}
-
-@media (min-width: 801px) {
-  .footer-secondary {
-    text-align: right;
-  }
-}
-
-/* ---------------------------------------------------------------------
  footerLogo
 ------------------------------------------------------------------------ */
 .footLogo {
@@ -764,12 +736,67 @@ body {
   width: 100%;
 }
 
-.site-bd-section_gray {
-  background-color: #f6f6f6;
-}
-
 .site-ft {
   border-top: 1px solid #acacac;
+}
+
+@media (max-width: 800px) {
+  #home {
+    border: white solid 12px;
+    background-image: url("./assets/media/images/banner_mobile.jpg");
+    height: 910px;
+    background-size: cover;
+  }
+  .u-constrainer {
+    width: 100%;
+    display: grid;
+    grid-template-rows: 126px 1fr;
+    padding-top: 45px;
+    text-align: center;
+    height: 100%;
+  }
+  .home-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #current {
+    min-height: 910px;
+    background-image: url("./assets/media/images/geo.jpg");
+    background-size: cover;
+  }
+  app-current {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    padding-top: 45px;
+  }
+
+  #voting {
+    min-height: 1000px;
+  }
+
+  app-voting {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    padding-top: 45px;
+    height: 800px;
+  }
+
+  #signup {
+    min-height: 800px;
+    background-color: #f6f6f6;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    a {
+      cursor: pointer;
+    }
+  }
 }
 
 @media (min-width: 801px) {
@@ -804,10 +831,29 @@ body {
     padding-top: 45px;
   }
 
+  .voting-wrapper {
+    height: 800px;
+  }
+
   app-voting {
     display: block;
     text-align: center;
     padding: 24px;
     padding-top: 45px;
+    height: 800px;
+  }
+
+  #signup {
+    height: 600px;
+    background-color: #f6f6f6;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    a {
+      cursor: pointer;
+    }
   }
 }

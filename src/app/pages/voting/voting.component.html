@@ -1,6 +1,6 @@
 <h2 class="hdg hdg_2">Snack Voting</h2>
 <h3>Vote on the snacks you want to see in this month's rotation</h3>
-<hr />
+<hr class="top-line" />
 <h4>{{ remaining }} Votes Remaining</h4>
 
 <div *ngIf="!loading; else loadingText">
@@ -8,7 +8,7 @@
     <table>
       <caption>
         <h2>Available Items</h2>
-        <div>{{ snacks.length }}</div>
+        <div class="circle-counter">{{ snacks.length }}</div>
       </caption>
       <tbody>
         <tr *ngFor="let snack of snacks">
@@ -30,14 +30,16 @@
             </button>
           </td>
           <td>{{ snack.brand }} {{ snack.product }}</td>
-          <td>{{ snack.votes }}</td>
+          <td class="table-votes">{{ snack.votes }}</td>
         </tr>
       </tbody>
     </table>
 
     <div class="selection-wrapper">
-      <h2>Selection</h2>
-      <span>{{ votesCast.length }}</span>
+      <div class="selection-header">
+        <h2>Selection</h2>
+        <div class="circle-counter">{{ votesCast.length }}</div>
+      </div>
       <hr />
       <ul *ngFor="let snackVote of votesCast">
         <app-snack-selection
