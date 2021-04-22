@@ -17,6 +17,7 @@ import { LogoComponent } from './components/logo/logo.component';
 import { InputComponent } from './components/signup-form/input/input.component';
 import { ErrorMessageComponent } from './components/error-message/error-message.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { GlobalComponentComponent } from './components/global-component/global-component.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
     InputComponent,
     ErrorMessageComponent,
     FooterComponent,
+    GlobalComponentComponent,
   ],
   imports: [BrowserModule, HttpClientModule],
   providers: [],

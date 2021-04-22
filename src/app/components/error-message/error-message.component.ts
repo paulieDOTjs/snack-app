@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { timer } from 'rxjs';
 import { ERROR_MESSAGES } from 'src/app/config/errors';
 
 @Component({
@@ -9,7 +10,15 @@ import { ERROR_MESSAGES } from 'src/app/config/errors';
 export class ErrorMessageComponent implements OnInit {
   @Input() error: ERROR_MESSAGES;
 
+  @Output() errorEvent = new EventEmitter<string>();
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    timer(4000).subscribe(() => this.clearError());
+  }
+
+  clearError() {
+    this.errorEvent.emit(ERROR_MESSAGES.CLEAR);
+  }
 }

@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http.sayHello().subscribe(
       (hello: any) => {
-        console.log(hello);
+        console.log('Server is up and running');
       },
       (err) => {
         console.error(err.message);
