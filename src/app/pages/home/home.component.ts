@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.http.sayHello().subscribe(
       (hello: any) => {
-        console.log(hello.message);
+        console.log(hello);
       },
       (err) => {
         console.error(err.message);
